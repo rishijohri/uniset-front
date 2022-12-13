@@ -1,8 +1,16 @@
 import React from 'react';
 import logo from './logo.svg';
+import { useSelector, useDispatch } from 'react-redux';
+import { todoAPI } from './services';
+import { todoSlice } from './features/todo/todoSlice';
 import './App.css';
-
+import { TodoState } from './types';
+import AddTodo from './components/AddTodo';
+import ListTodo from './components/ListTodo';
 function App() {
+  const dispatch = useDispatch();
+  const todos = useSelector((state: any) => state.todo);
+  
   return (
     <div className="App">
       <header className="App-header">
@@ -10,17 +18,12 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <ListTodo />
+        <AddTodo />
       </header>
     </div>
   );
 }
 
 export default App;
+
