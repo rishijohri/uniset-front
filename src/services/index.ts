@@ -11,7 +11,7 @@ function sleep(seconds: number) {
 const dummyTodos: TodoType[] = [
     {
         id: 1,
-        createdAt: new Date(),
+        createdAt: Date(),
         createdBy: "anonymous-1",
         title: "Test TODO-1",
         description: "Hard Coded Description-1",
@@ -19,7 +19,7 @@ const dummyTodos: TodoType[] = [
     },
     {
         id: 2,
-        createdAt: new Date(),
+        createdAt: Date(),
         createdBy: "anonymous-2",
         title: "Test TODO-2",
         description: "Hard Coded Description-2",

@@ -3,19 +3,20 @@ import { TodoType } from "../types";
 import useCreateTodo from "../hooks/useCreateTodo";
 
 function CreateTodo() {
-    const AddHandler = () => {
-        const todo_item: TodoType = {
+    const AddHandler = useCreateTodo()
+    const todo_item: TodoType = {
         id: 3,
         title: "test",
         description: "test",
         needsReminder: false,
-        createdAt: new Date(),
+        createdAt: Date(),
         createdBy: "test",
         };
-        useCreateTodo(todo_item);
-    }
+    
     return (
-        <button onClick={AddHandler}>Add</button>
+        <button onClick={() => {
+            AddHandler(todo_item);
+        }}>Add</button>
     );
 }
 

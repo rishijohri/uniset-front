@@ -2,16 +2,9 @@ import { createSlice, PayloadAction} from '@reduxjs/toolkit'
 import { TodoType } from '../../types'
 // Define a type for the slice state
 
-const intitalValue: TodoType = {
-    createdAt: new Date(),
-    createdBy: "effect",
-    description: "empty",
-    needsReminder: true,
-    title: "created",
-    id: 0
-}
 
-const initialState = [intitalValue]
+
+const initialState: TodoType[] = []
 
 export const todoSlice = createSlice({
     name: 'todo',

@@ -1,7 +1,7 @@
 import { Key } from "react"
 
 interface TodoType {
-    createdAt: Date,
+    createdAt: String,
     createdBy: String,
     description: String,
     needsReminder: boolean,
