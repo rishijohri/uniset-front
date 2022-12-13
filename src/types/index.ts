@@ -1,6 +1,6 @@
 import { Key } from "react"
 
-interface TodoState {
+interface TodoType {
     createdAt: Date,
     createdBy: String,
     description: String,
@@ -9,4 +9,4 @@ interface TodoState {
     id: Key
 }
 
-export type {TodoState}
+export type {TodoType}

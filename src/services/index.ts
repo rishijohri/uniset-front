@@ -1,4 +1,4 @@
-import { TodoState } from "../types";
+import { TodoType } from "../types";
 
 function sleep(seconds: number) {
     return new Promise<void>((resolve, _reject) => {
@@ -8,7 +8,7 @@ function sleep(seconds: number) {
     });
 }
 
-const dummyTodos: TodoState[] = [
+const dummyTodos: TodoType[] = [
     {
         id: 1,
         createdAt: new Date(),
@@ -27,27 +27,27 @@ const dummyTodos: TodoState[] = [
     }
 ];
 
-async function listTodos(): Promise<TodoState[]> {
+async function readTodo(): Promise<TodoType[]> {
     await sleep(2);
     return dummyTodos;
 }
 
-async function addTodo(todoItem: TodoState): Promise<TodoState["id"]> {
+async function createTodo(todoItem: TodoType): Promise<TodoType["id"]> {
     await sleep(2);
     dummyTodos.push(todoItem);
     return todoItem.id;
 }
 
-async function updateTodo(id: TodoState["id"]): Promise<boolean> {
+async function updateTodo(id: TodoType["id"]): Promise<boolean> {
     await sleep(2);
     return true;
 }
 
-async function removeTodo(id: TodoState["id"]): Promise<boolean> {
+async function deleteTodo(id: TodoType["id"]): Promise<boolean> {
     await sleep(2);
     return true;
 }
 
-const todoAPI = { listTodos, addTodo, updateTodo, removeTodo };
+const TodoAPI = { readTodo, createTodo, updateTodo, deleteTodo };
 
-export { todoAPI };
+export { TodoAPI };
