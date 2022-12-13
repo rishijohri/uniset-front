@@ -26,7 +26,9 @@ export const todoSlice = createSlice({
         }
     },
     readTodoAction: (state, action: PayloadAction<TodoType[]>) => {
-        state = action.payload
+        action.payload.forEach((todo) => {
+            state.push(todo)
+        })
     },
     },
 })
