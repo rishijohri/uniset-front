@@ -12,6 +12,8 @@ export default function useReadTodo() {
         TodoAPI.readTodo()
         .then((response) => {
             dispatch(readTodoAction(response));
+        }).catch((error) => {
+            console.log(error);
         });
     }, []);
     return todo;
